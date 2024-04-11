@@ -1,10 +1,10 @@
 package store
 
 import (
-	"math"
-	"platform/http/actionresults"
-	"platform/http/handling"
-	"sportsstore/models"
+    "sportsstore/models"
+    "platform/http/actionresults"
+    "platform/http/handling"
+    "math"
 )
 
 const pageSize = 4
@@ -37,7 +37,8 @@ func (handler ProductHandler) GetProducts(category,
             PageNumbers: handler.generatePageNumbers(pageCount),
             PageUrlFunc: handler.createPageUrlFunction(category),
             SelectedCategory: category,
-            AddToCartUrl: mustGenerateUrl(handler.URLGenerator, CartHandler.PostAddToCart),
+            AddToCartUrl: mustGenerateUrl(handler.URLGenerator, 
+                 CartHandler.PostAddToCart),
         })     
 }
 
@@ -57,10 +58,10 @@ func (handler ProductHandler) generatePageNumbers(pageCount int) (pages []int) {
     return
 }
 
-func mustGenerateUrl(generator handling.URLGenerator, target interface{}) string{
-    url, err := generator.GenerateUrl(target)
-    if(err != nil){
+func mustGenerateUrl(generator handling.URLGenerator, target interface{}) string {
+    url, err := generator.GenerateUrl(target)    
+    if (err != nil) {
         panic(err)
     }
-    return url
+    return url;
 }

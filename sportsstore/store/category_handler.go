@@ -1,9 +1,9 @@
 package store
 
 import (
-	"platform/http/actionresults"
-	"platform/http/handling"
-	"sportsstore/models"
+    "sportsstore/models"
+    "platform/http/actionresults"    
+    "platform/http/handling"
 )
 
 type CategoryHandler struct {

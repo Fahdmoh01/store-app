@@ -1,6 +1,6 @@
 package models
 
-type Category struct{
-	ID int
-	CategoryName string
+type Category struct {
+    ID int
+    CategoryName string
 }
